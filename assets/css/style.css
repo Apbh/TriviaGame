@@ -1,0 +1,108 @@
+* {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    
+    }
+
+    html{
+        font-size:62.5%;
+        
+    }
+
+    body{
+        font-size:1.6rem;
+        background-image: url("../images/world.jpg");
+        background-repeat: no-repeat;
+        min-height: 830px;
+        background-position: center;
+        background-size:cover;
+    
+    }
+
+    h1{
+        font-family: 'Leckerli One', cursive;
+        font-size:4rem;
+        
+    }
+
+    #wrapper{
+        position:relative;
+        left:-31px;
+        top:22px;
+        height:700px;
+      max-width:730px;
+    margin:0 auto;
+     background-color: whitesmoke;
+	border-radius: 50%;
+    }
+
+
+    #start{
+        font-family: 'Leckerli One', cursive;
+        font-size:3.5rem;
+        position: absolute;
+        top: 310px;
+        left: 166px;
+        min-width: 400px;
+        height: 60px;
+        text-align: center;
+        border: none;
+        background-color: skyblue;
+
+    }
+
+    #start:hover{
+        cursor: pointer;
+    }
+
+
+    .gamepage{
+        position:relative;
+        top:175px;
+        margin:0 auto;
+        text-align: center;
+    }
+
+    #countDown{
+        font-family:'Mogra', cursive;
+        font-size:3rem;
+    }
+
+    #showQuestion{
+        font-family: 'Mogra', cursive;
+        font-size:2rem;
+        line-height:1px;
+        width:95%;
+        margin-left:10px;
+        text-align:center;
+        color: steelblue;
+        line-height:35px;
+        
+    }
+
+    #showAnswer{
+        font-family: 'Mogra', cursive;
+        text-align: center;
+        font-size:3rem;
+        margin-top:25px;
+    }
+
+    .answeroption{
+        margin-top:30px;
+    }
+
+    .answeroption:hover{
+        cursor: pointer;
+        font-size:3.5rem;
+        color:cadetblue;
+        
+    }
+        
+
+    
+
+    .gif{
+        width:300px;
+        height:auto;
+    }
+
+    
