@@ -1,4 +1,4 @@
-Game Objectives
+Game Objectives: 
 Think you've travelled enough? Try this quiz and find out. You will have 20 seconds to answer each question. Good luck!
 
 Getting Started
