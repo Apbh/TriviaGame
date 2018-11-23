@@ -52,6 +52,17 @@
 
     }
 
+    #reset{
+        font-family: 'Leckerli One', cursive;
+        font-size:3.5rem;  
+        min-width: 400px;
+        height: 60px;
+        text-align: center;
+        border: none;
+        background-color: skyblue;
+
+    }
+
     #start:hover{
         cursor: pointer;
     }
