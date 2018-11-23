@@ -102,10 +102,11 @@ $(document).ready(function () {
     var pick;
     var index = [];
     var alreadySelected = [];
-    var newArray = [];
+
 
 
     //start of the game
+
     $("#reset").hide();
 
 
@@ -115,12 +116,6 @@ $(document).ready(function () {
         $("#start").hide();
         startTimer();
         showQuestion();
-        for (var i = 0; i < quizContent.length; i++) {
-            alreadySelected.push(quizContent[i]);
-            console.log(alreadySelected)
-        }
-
-
 
     })
 
@@ -170,52 +165,33 @@ $(document).ready(function () {
 
     }
 
-    function pickQuestion() {
 
-        index = Math.floor(Math.random() * quizContent.length);
-        console.log(index);
-        console.log(quizContent[index].question);
-
-
-
-    }
-
-    //pi
 
     //Show Questions
 
     function showQuestion() {
 
-        //push randomly generated index numbers to alreadySelected to avoid repeating questions. This step didn't work. On the console, only see one number at a time in the array. Do/while array in 
-        //next step works, but only compares it with the one value in array.
-
-        var alreadySelected = [];
 
 
-        index = Math.floor(Math.random() * quizContent.length);
+        //making sure questions displayed don't repeat
+
+        index;
+        if (questionCounter > 0) {
+            do {
+                index = Math.floor(Math.random() * quizContent.length);
+            } while (alreadySelected.indexOf(index) !== -1)
+        }
         alreadySelected.push(index);
-
         console.log(alreadySelected);
 
 
-
-        //To keep picking another question if index values and index in alreadySelected don't match
-        do {
-            pickQuestion();
-        } while (alreadySelected.indexOf(index) !== -1)
-
+        //pick the question to be displayed    
         pick = quizContent[index];
-
-
-
-
 
 
         startTimer();
         decrement();
-        questionCounter--;
-        // questionshown = true;
-        console.log(questionCounter);
+        // console.log(questionCounter);
         $(".message").hide();
         $(".gif").hide();
 
@@ -237,7 +213,7 @@ $(document).ready(function () {
 
 
 
-        if (questionCounter < 0) {
+        if (questionCounter === 0) {
             stop();
             $("#showQuestion").empty();
             $("#showQuestion").html("<h2> Game Over! Here's how you did: </h2>")
@@ -245,14 +221,17 @@ $(document).ready(function () {
             $("#showAnswer").append("<h3>Correct Answers: " + correctAns + "</h3");
             $("#showAnswer").append("<h3>Incorrect Answers: " + wrongAns + "</h3");
             $("#showAnswer").append("<h3>Unattempted Answers: " + noAns + "</h3");
-            $("#showAnswer").append("<button class= 'reset'>Play Again? </button>");
-
+            $("#reset").show();
+            $("#reset").on("click", function () {
+                resetGame();
+            })
 
 
         };
 
 
 
+        questionCounter--;
     }
 
 
@@ -261,9 +240,11 @@ $(document).ready(function () {
     function resetGame() {
         //alreadySelected =[]
 
-        $(".reset").hide();
+        $("#reset").hide();
         $("#showQuestion").empty();
         $("#showAnswer").empty();
+        questionCounter = quizContent.length;
+        alreadySelected = []
         correctAns = 0;
         wrongAns = 0;
         noAns = 0;
@@ -281,7 +262,7 @@ $(document).ready(function () {
     $("#showAnswer").on("click", ".answeroption", function () {
         //get index position from the selected option in array
         userSelect = parseInt($(this).attr("data-answervalue"));
-
+        console.log('click')
 
 
 
@@ -310,22 +291,13 @@ $(document).ready(function () {
             // console.log(questionCounter);
             console.log("wrong ans: " + wrongAns);
             setTimeout(showQuestion, 3000);
-           
+
 
 
 
         }
 
     })
-
-    //This button didn't work. Upon click, resetGame() function doesn't run.
-    $("#reset").on("click", function () {
-        resetGame();
-    })
-
-
-
-
 
 
 })

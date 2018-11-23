@@ -10,38 +10,40 @@
 
     body{
         font-size:1.6rem;
-        background-image: url("../images/world.jpg");
-        background-repeat: no-repeat;
-        min-height: 830px;
-        background-position: center;
-        background-size:cover;
+        /* max-width:1080px; */
+        /* width:95% */
+        /* width:100%; */
     
+    }
+    .wrapper{
+        margin:0 auto;
+        max-width:1080px;
+        height:auto;
+    }
+    .pageTitleAndImage{
+        background-image: url("../images/world.jpg"); 
+        background-repeat: no-repeat;
+        min-height: 450px; 
+        background-position: top; 
+        background-size:cover;
+     
     }
 
     h1{
         font-family: 'Leckerli One', cursive;
-        font-size:4rem;
+        font-size:5rem;
+        text-shadow: 5px 5px ghostwhite;
+        margin:0px;
         
     }
 
-    #wrapper{
-        position:relative;
-        left:-31px;
-        top:22px;
-        height:700px;
-      max-width:730px;
-    margin:0 auto;
-     background-color: whitesmoke;
-	border-radius: 50%;
-    }
 
 
     #start{
         font-family: 'Leckerli One', cursive;
         font-size:3.5rem;
-        position: absolute;
-        top: 310px;
-        left: 166px;
+        margin-top: 200px;
+        margin-left: 180px;    
         min-width: 400px;
         height: 60px;
         text-align: center;
@@ -56,9 +58,6 @@
 
 
     .gamepage{
-        position:relative;
-        top:175px;
-        margin:0 auto;
         text-align: center;
     }
 
@@ -105,4 +104,51 @@
         height:auto;
     }
 
-    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: skyblue;
+        font-family: 'Leckerli One', cursive;
+        font-size: 1.5rem;
+        text-align: center;
+     }
+     
+
+    /* media queries begin */
+
+    @media(min-width:1000px){
+        #start{
+            margin-top:50px;
+            margin-left:-11px;
+        }
+
+        .gamepage{
+            margin-top:150px;
+            margin-bottom:200px;
+           
+        }
+    }
+
+    @media (max-width: 768px) {
+      
+
+        #start{
+            font-size: 2rem;
+            margin-left:40px;
+            min-width:0;
+            width:75%
+        }
+
+        .gamepage{
+            margin-top:150px;
+            margin-bottom:200px;
+        }
+
+
+
+
+    }
+
+  
