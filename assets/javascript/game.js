@@ -181,9 +181,12 @@ $(document).ready(function () {
                 index = Math.floor(Math.random() * quizContent.length);
             } while (alreadySelected.indexOf(index) !== -1)
         }
-        alreadySelected.push(index);
-        console.log(alreadySelected);
 
+
+        alreadySelected.push(index);
+
+
+        console.log(alreadySelected);
 
         //pick the question to be displayed    
         pick = quizContent[index];
@@ -191,7 +194,7 @@ $(document).ready(function () {
 
         startTimer();
         decrement();
-        // console.log(questionCounter);
+        console.log(questionCounter);
         $(".message").hide();
         $(".gif").hide();
 
